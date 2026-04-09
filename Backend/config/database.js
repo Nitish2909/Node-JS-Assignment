@@ -6,7 +6,6 @@ dotenv.config();
 
 // Replace with your actual credentials
 const db = mysql.createConnection(process.env.connectionString);
-
 db.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err.message);
