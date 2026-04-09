@@ -13,7 +13,6 @@ db.connect((err) => {
   console.log('Successfully connected to the MySQL database.');
 });
 
-/* for local */
 
 // const db = mysql.createConnection({
 //     host: process.env.DB_HOST,
