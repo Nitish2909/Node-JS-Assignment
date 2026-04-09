@@ -72,7 +72,7 @@ export const getSchoolsController = (req, res) => {
     if (isNaN(lat) || isNaN(lng)) {
       return res
         .status(400)
-        .json({ message: "Latitude and Longitude must be valid numbers" });
+        .json({ message: "Latitude and Longitude must be a valid numbers" });
     }
 
     const sql = `SELECT name, address, latitude, longitude,
@@ -89,7 +89,7 @@ export const getSchoolsController = (req, res) => {
      db.query(sql, [lat, lng, lat], (err, results) => {
       if (err) {
         console.error("Error fetching schools from database:", err);
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "Internal Server Error" });
       }
       return res.status(200).json({
         message: "Nearest Schools fetched successfully",
@@ -98,6 +98,6 @@ export const getSchoolsController = (req, res) => {
     });
   } catch (error) {
     console.error("Error fetching schools:", error);
-    return res.status(500).json({ message: "Internal server error" });
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 };

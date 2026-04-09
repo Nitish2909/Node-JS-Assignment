@@ -3,7 +3,6 @@ import dotenv from "dotenv"
 
 dotenv.config();
 
-
 // Replace with your actual credentials
 const db = mysql.createConnection(process.env.connectionString);
 db.connect((err) => {
