@@ -36,7 +36,7 @@ export const addSchoolController = (req, res) => {
     const sql =
       "INSERT INTO schools (name, address, latitude, longitude) VALUES ( ?, ?, ?, ?)";
 
-    db.query(sql, [name, address, lat, lng], (err, result) => {
+     db.query(sql, [name, address, lat, lng], (err, result) => {
       if (err) {
         console.error("Error inserting school into database:", err);
         return res.status(500).json({ message: "Internal server error" });
@@ -86,7 +86,7 @@ export const getSchoolsController = (req, res) => {
         LIMIT 10;
 `;
 
-    db.query(sql, [lat, lng, lat], (err, results) => {
+     db.query(sql, [lat, lng, lat], (err, results) => {
       if (err) {
         console.error("Error fetching schools from database:", err);
         return res.status(500).json({ message: "Internal server error" });
